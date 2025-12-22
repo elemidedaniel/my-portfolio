@@ -16,7 +16,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#0B0B0B] px-6 py-4 text-[#EDEDED]">
+    <div className="min-h-screen bg-[#0B0B0B] px-1 py-1 md:px-6 md:py-4 text-[#EDEDED]">
       <Modal />
       <div className="fixed top-2 left-1/2 -translate-x-1/2 flex items-center gap-8 px-7 py-4 bg-white/5 backdrop-blur-lg rounded-xl shadow-lg w-fit z-50">
         {/* <h2 className="font-bold text-2xl">DANIEL</h2> */}
