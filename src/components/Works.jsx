@@ -9,7 +9,7 @@ import profile7 from "../assets/projects/profile7.jpeg";
 import project18 from "../assets/projects/project18.jpg";
 import project21 from "../assets/projects/project21.jpg";
 import project34 from "../assets/projects/project34.jpg";
-import projectWeb3 from "../assets/projects/project web3.jpg";
+import projectWeb3 from "../assets/projects/project-web3.jpg";
 import project27 from "../assets/projects/project27.jpg";
 import project28 from "../assets/projects/project28.jpg";
 import project33 from "../assets/projects/project33.jpg";
@@ -18,18 +18,17 @@ import project33 from "../assets/projects/project33.jpg";
 const projects = [
   { id: 1, title: "3D implementation", image: profile1 },
   { id: 2, title: "Landing Page Redesign", image: profile2 },
-  { id: 3, title: "Project Management App", image: projectWeb3},
+  { id: 3, title: "Project Management App", image: projectWeb3 },
   { id: 4, title: "Product Showcase", image: brands1 },
   { id: 5, title: "Portfolio Website", image: profile7 },
   { id: 6, title: "SaaS Marketing Page", image: project18 },
   { id: 7, title: "Admin Panel UI", image: project21 },
   { id: 8, title: "Expense Tracker", image: project34 },
   { id: 9, title: "Analytics Dashboard", image: project16 },
-  { id: 10, title:  "Fintech Web App", image: project33 },
+  { id: 10, title: "Fintech Web App", image: project33 },
   { id: 11, title: "Design System", image: project28 },
-  { id: 12, title: "Email Collection", image: project27},
+  { id: 12, title: "Email Collection", image: project27 },
 ];
-
 
 export default function ProjectsPage() {
   const [activeProject, setActiveProject] = useState(null);
@@ -101,7 +100,7 @@ export default function ProjectsPage() {
       <AnimatePresence>
         {activeProject && (
           <motion.div
-            className="fixed inset-0 z-[9999] bg-black/80 flex items-center justify-center p-6"
+            className="fixed inset-0 z-9999 bg-black/80 flex items-center justify-center p-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -136,4 +135,3 @@ export default function ProjectsPage() {
     </section>
   );
 }
-
