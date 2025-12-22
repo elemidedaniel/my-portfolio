@@ -1,29 +1,67 @@
-import Universe from "../assets/universe.png";
+import { motion } from "framer-motion";
 import Socials from "./Socials";
+import Mypage from "../assets/code.jpg";
 
 export default function HomePage() {
   return (
-    <div id="home" className="h-full">
-      <div className="container flex flex-col md:flex-row items-center justify-between gap-10 md:mt-20 px-6 md:px-0 mx-auto mt-20">
-        <div className="md:w-1/2 flex flex-col items-center md:items-start justify-center gap-4">
-          <p className="text-orange-500">Front-End Developer</p>
-          <h1 className="font-bold text-3xl md:text-8xl text-orange-500 leading-none">
-            <span className="md:block font-extralight md:text-5xl text-amber-50">Elemide </span>Daniel</h1>
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center overflow-hidden"
+    >
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        style={{ backgroundImage: `url(${Mypage})` }}
+      />
 
-          <p className="text-sm md:text-lg italic md:mt-5 text-white/70 text-center md:text-left md:max-w-md">
-            Building modern, user-focused digital experiences with
-            clean, efficient, and scalable code.
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/60" />
+
+      {/* Content */}
+      <div className="relative container mx-auto px-6 md:px-0">
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="flex flex-col gap-6 max-w-3xl"
+        >
+          <p className="uppercase tracking-widest text-orange-400">
+            Frontend Developer
           </p>
+
+          <h1 className="font-bold text-4xl md:text-7xl leading-tight text-white">
+            <span className="block font-light text-gray-300">
+              Elemide
+            </span>
+            Daniel
+          </h1>
+
+          <p className="text-lg text-white/70 max-w-xl">
+            Building modern, user-focused digital experiences with clean,
+            scalable, and performant code.
+          </p>
+
+          {/* CTA */}
+          <div className="flex gap-4 mt-4">
+            <a
+              href="#projects"
+              className="px-6 py-3 rounded-xl bg-orange-500 text-black font-medium hover:bg-orange-400 transition"
+            >
+              View Projects
+            </a>
+
+            <a
+              href="#contact"
+              className="px-6 py-3 rounded-xl border border-white/30 text-white hover:bg-white/10 transition"
+            >
+              Let’s work together
+            </a>
+          </div>
+
           <Socials />
-        </div>
-        <div className="w-1/2 aspect-square overflow-hidden flex items-center justify-center">
-          <img
-            src={Universe}
-            alt="Universe"
-            className="w-full h-full object-contain origin-center animate-[spin_50s_linear_infinite]"
-          />
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -12,9 +12,9 @@ import Vite from "../assets/vite.png";
 
 export default function ToolPage() {
   return (
-    <div className="w-full mt-20 overflow-hidden bg-[#626262]">
+    <div className="w-full mt-10 overflow-hidden mx-2 md:mx-3">
       <div
-        className="flex w-max gap-10 hover:[animation-play-state:paused] bg-[#626262] px-4 py-2 rounded-sm"
+        className="flex w-max gap-10 hover:[animation-play-state:paused] px-4 py-2 rounded-sm"
         style={{
           animation: "marquee 25s linear infinite",
         }}

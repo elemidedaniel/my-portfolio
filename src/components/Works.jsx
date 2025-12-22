@@ -45,7 +45,7 @@ export default function ProjectsPage() {
   return (
     <section
       id="projects"
-      className="min-h-screen text-white px-6 md:px-20 py-24"
+      className="min-h-screen text-[#475569] px-6 md:px-20 py-24"
     >
       {/* Header */}
       <motion.div
@@ -58,7 +58,7 @@ export default function ProjectsPage() {
         <h2 className="text-2xl md:text-5xl font-bold mb-4">
           Selected <span className="text-orange-500">Projects</span>
         </h2>
-        <p className="text-white/70">
+        <p className="text-[#475569]">
           A collection of interfaces and web experiences I’ve built with a focus
           on performance, usability, and clean design.
         </p>
