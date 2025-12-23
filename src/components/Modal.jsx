@@ -123,7 +123,7 @@ export default function Modal() {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full py-1.5l md:py-3 rounded-lg
+                      className="w-full py-2 md:py-3 rounded-lg mb-2
                                  bg-orange-500 hover:bg-orange-600
                                  text-white font-semibold
                                  transition disabled:opacity-50"

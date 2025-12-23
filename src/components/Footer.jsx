@@ -52,7 +52,7 @@ export default function Footer() {
             <ion-icon name="logo-linkedin"></ion-icon>
           </motion.a>
           <motion.a
-            href="https://twitter.com/"
+            href="https://twitter.com/ElemideDaniel"
             target="_blank"
             whileHover={{ y: -3, scale: 1.1 }}
           >

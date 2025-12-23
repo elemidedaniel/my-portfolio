@@ -9,13 +9,6 @@ import Modal from "./components/Modal";
 import Services from "./components/Services";
 import Footer from "./components/Footer";
 
-// Background: #0B0B0B
-// Surface:    #141414
-// Text:       #EDEDED
-// Muted text: #9CA3AF
-// Accent:     #F97316 (Orange)
-// Border:     #262626
-
 
 function App() {
   return (
@@ -38,7 +31,7 @@ function App() {
         shadow-[0_8px_30px_rgba(15,23,42,0.25)] 
         w-fit z-50"
       >
-        <ul className="flex flex-row gap-8">
+        <ul className="flex flex-row gap-4 md:gap-8">
           <a href="#services">
             <li className="relative cursor-pointer text-white/90 hover:text-white
               after:content-[''] after:absolute after:-bottom-1 after:left-0 
@@ -48,7 +41,7 @@ function App() {
             </li>
           </a>
 
-          <a href="#about">
+          <a href="#About">
             <li className="relative cursor-pointer text-white/90 hover:text-white
               after:content-[''] after:absolute after:-bottom-1 after:left-0 
               after:w-0 after:h-0.5 after:bg-[#F97316] 
