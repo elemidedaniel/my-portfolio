@@ -14,7 +14,6 @@ import project27 from "../assets/projects/project27.jpg";
 import project28 from "../assets/projects/project28.jpg";
 import project33 from "../assets/projects/project33.jpg";
 
-
 const projects = [
   { id: 1, title: "3D implementation", image: profile1 },
   { id: 2, title: "Landing Page Redesign", image: profile2 },
@@ -33,7 +32,7 @@ const projects = [
 export default function ProjectsPage() {
   const [activeProject, setActiveProject] = useState(null);
 
-  // ESC key close
+  // ESC key closes lightbox
   useEffect(() => {
     const handleEsc = (e) => {
       if (e.key === "Escape") setActiveProject(null);
@@ -64,51 +63,62 @@ export default function ProjectsPage() {
         </p>
       </motion.div>
 
-      {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[220px]">
-        {projects.map((project, index) => (
-          <motion.div
-            key={project.id}
-            layout
-            onClick={() => setActiveProject(project)}
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: index * 0.05 }}
-            viewport={{ once: true }}
-            className={`
-              relative cursor-pointer overflow-hidden rounded-2xl group shadow-xl
-              ${index % 3 === 0 ? "lg:row-span-2" : ""}
-              ${index % 4 === 0 ? "lg:col-span-2" : ""}
-            `}
-          >
-            <img
-              src={project.image}
-              alt={project.title}
-              className="absolute inset-0 w-full h-full object-cover
-                         transition-transform duration-700 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
-              <div className="p-5">
-                <h3 className="text-lg font-semibold">{project.title}</h3>
-              </div>
-            </div>
-          </motion.div>
-        ))}
+      {/* Horizontal scroll container */}
+      <div className="overflow-x-auto">
+        {/* Grid stays exactly like desktop */}
+<div className="inline-grid grid-cols-3 gap-6 min-w-[1200px]">
+  {projects.map((project, index) => (
+    <motion.div
+      key={project.id}
+      layout
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.6, delay: index * 0.05 }}
+      viewport={{ once: true }}
+      className={`
+        relative cursor-pointer overflow-hidden rounded-2xl group shadow-xl
+        ${index % 3 === 0 ? "lg:row-span-2" : ""}
+        ${index % 4 === 0 ? "lg:col-span-2" : ""}
+      `}
+      style={{ minHeight: 220 }}
+      onClick={() => {
+        if (project.title === "Expense Tracker") {
+          // Open live site in new tab
+          window.open(
+            "https://expense-tracker-fawn-one.vercel.app/",
+            "_blank"
+          );
+        } else {
+          // Open lightbox for all other projects
+          setActiveProject(project);
+        }
+      }}
+    >
+      <img
+        src={project.image}
+        alt={project.title}
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+      />
+      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
+        <div className="p-5">
+          <h3 className="text-lg font-semibold">{project.title}</h3>
+        </div>
+      </div>
+    </motion.div>
+  ))}
+</div>
+
       </div>
 
       {/* Lightbox */}
       <AnimatePresence>
         {activeProject && (
           <motion.div
-            className="fixed inset-0 z-9999 bg-black/80 flex items-center justify-center p-6"
+            className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            // 🔒 capture event BEFORE click reaches grid
-            onMouseDown={(e) => {
-              e.stopPropagation();
-              setActiveProject(null);
-            }}
+            onMouseDown={() => setActiveProject(null)}
           >
             <motion.img
               src={activeProject.image}
@@ -126,7 +136,6 @@ export default function ProjectsPage() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.85, opacity: 0 }}
               transition={{ duration: 0.25 }}
-              // ❌ clicking image does NOT close
               onMouseDown={(e) => e.stopPropagation()}
             />
           </motion.div>
