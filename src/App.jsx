@@ -4,10 +4,13 @@ import { motion } from "framer-motion";
 import HomePage from "./components/HomePage";
 import ToolsPage from "./components/ToolsPage";
 import About from "./components/About";
-import Works from "./components/Works";
+
 import Modal from "./components/Modal";
 import Services from "./components/Services";
 import Footer from "./components/Footer";
+import ProjectsPage from "./components/ProjectsSection";
+import Reviews from "./components/Review";
+import FAQ from "./components/Faq";
 
 
 function App() {
@@ -65,7 +68,9 @@ function App() {
       <HomePage />
       <ToolsPage />
       <About />
-      <Works />
+      <ProjectsPage />
+      <Reviews />
+      <FAQ />
       <Services />
       <Footer />
     </div>

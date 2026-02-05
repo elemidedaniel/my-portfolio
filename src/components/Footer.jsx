@@ -22,17 +22,19 @@ export default function Footer() {
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
         {/* Links */}
         <div className="flex flex-col md:flex-row gap-6 items-center">
-          {["Home", "Services", "Projects", "About", "Contact"].map((link, index) => (
-            <motion.a
-              key={index}
-              href={`#${link.toLowerCase()}`}
-              className="text-gray-300 hover:text-white font-medium"
-              variants={linkVariants}
-              whileHover="hover"
-            >
-              {link}
-            </motion.a>
-          ))}
+          {["Home", "Services", "Projects", "About", "Contact"].map(
+            (link, index) => (
+              <motion.a
+                key={index}
+                href={`#${link.toLowerCase()}`}
+                className="text-gray-300 hover:text-white font-medium"
+                variants={linkVariants}
+                whileHover="hover"
+              >
+                {link}
+              </motion.a>
+            ),
+          )}
         </div>
 
         {/* Social Icons */}
@@ -57,6 +59,13 @@ export default function Footer() {
             whileHover={{ y: -3, scale: 1.1 }}
           >
             <ion-icon name="logo-twitter"></ion-icon>
+          </motion.a>
+          <motion.a
+            href="https://wa.me/2349069206248"
+            target="_blank"
+            whileHover={{ y: -3, scale: 1.1 }}
+          >
+            <ion-icon name="logo-whatsapp"></ion-icon>
           </motion.a>
         </div>
       </div>

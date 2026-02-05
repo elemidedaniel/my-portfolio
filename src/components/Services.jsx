@@ -1,116 +1,88 @@
-import { motion, useAnimation, useMotionValue, useTransform } from "framer-motion";
-import { useEffect } from "react";
+import { motion } from "framer-motion";
 
-// Example services
 const services = [
   {
     title: "Web Development",
-    description: "I build responsive, performant websites using React, Tailwind, and modern web technologies.",
-    icon: "💻",
+    description:
+      "Responsive, high-performance websites built with React, Tailwind, and modern best practices.",
   },
   {
-    title: "UI/UX Design",
-    description: "Designing user-friendly and visually appealing interfaces for web and mobile apps.",
-    icon: "🎨",
+    title: "UI / UX Design",
+    description:
+      "Clean, intuitive interfaces designed to make products easy to use and visually refined.",
   },
   {
-    title: "E-commerce Solutions",
-    description: "Creating scalable and secure e-commerce platforms tailored to your business needs.",
-    icon: "🛒",
+    title: "E-commerce Platforms",
+    description:
+      "Scalable online stores with secure payments and conversion-focused user flows.",
   },
   {
-    title: "Website Optimization",
-    description: "Improving speed, SEO, and accessibility to maximize user engagement and conversions.",
-    icon: "⚡",
+    title: "Performance & SEO Optimization",
+    description:
+      "Improving speed, accessibility, and search visibility for better engagement.",
   },
   {
-    title: "Portfolio & Landing Pages",
-    description: "Building creative portfolio and landing pages that attract and convert visitors.",
-    icon: "🌟",
+    title: "Landing Pages & Portfolios",
+    description:
+      "High-converting pages crafted to communicate value and capture attention.",
   },
   {
-    title: "API Integration",
-    description: "Seamlessly integrating third-party APIs to enhance your website or web app.",
-    icon: "🔌",
+    title: "API & System Integrations",
+    description:
+      "Connecting third-party services and APIs seamlessly into your product.",
   },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0, y: 50 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { staggerChildren: 0.2, when: "beforeChildren" },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 120 } },
-  hover: { scale: 1.06, y: -5, transition: { type: "spring", stiffness: 200 } },
-};
-
-// Floating background circles
-const FloatingCircle = ({ size, x, y, color, duration }) => (
-  <motion.div
-    className={`absolute rounded-full ${color}`}
-    style={{ width: size, height: size, top: y, left: x }}
-    animate={{ y: [0, 20, 0] }}
-    transition={{ duration, repeat: Infinity, ease: "easeInOut" }}
-  />
-);
-
 export default function Services() {
   return (
-    <section id="services" className="relative min-h-screen bg-linear-to-b from-gray-900 to-gray-800 text-white overflow-hidden px-6 md:px-20 py-20">
-      
-      {/* Floating Background Shapes */}
-      <FloatingCircle size={100} x={50} y={50} color="bg-orange-500/20" duration={6} />
-      <FloatingCircle size={150} x={300} y={200} color="bg-purple-500/20" duration={8} />
-      <FloatingCircle size={80} x={600} y={100} color="bg-blue-500/20" duration={5} />
-      <FloatingCircle size={120} x={800} y={300} color="bg-pink-500/20" duration={7} />
-
-      {/* Heading */}
-      <motion.div
-        className="text-center mb-16 relative z-10"
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-orange-500">
-          My Services
-        </h1>
-        <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto">
-          I help clients build high-quality digital experiences that are fast, responsive, and visually appealing.
+    <section
+      id="services"
+      className="py-28 px-6 lg:px-20 bg-gradient-to-b from-orange-50/40 to-white"
+    >
+      {/* Header */}
+      <div className="max-w-3xl">
+        <p className="text-xs tracking-[0.35em] text-orange-400 mb-6">
+          SERVICES
         </p>
-      </motion.div>
 
-      {/* Service Cards */}
-      <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10"
-        variants={containerVariants}
-        initial="hidden"
-        animate="show"
-      >
-        {services.map((service, index) => (
+        <h2 className="font-grat text-[clamp(2.2rem,4vw,3.5rem)] leading-tight">
+          What I Help Clients Build
+        </h2>
+
+        <p className="mt-6 text-gray-600 text-lg max-w-2xl">
+          I design and develop digital products that are fast, elegant, and
+          built with attention to detail from concept to deployment.
+        </p>
+      </div>
+
+      {/* Services Grid */}
+      <div className="mt-20 grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        {services.map((service, i) => (
           <motion.div
-            key={index}
-            className="bg-white/5 backdrop-blur-lg rounded-xl p-8 flex flex-col items-center text-center shadow-lg hover:shadow-2xl cursor-pointer"
-            variants={cardVariants}
-            whileHover="hover"
+            key={i}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: i * 0.08 }}
+            viewport={{ once: true }}
+            className="group bg-white border border-gray-100 rounded-2xl p-8
+  shadow-sm hover:shadow-xl hover:-translate-y-1
+  transition-all duration-300"
           >
-            <motion.div
-              className="text-6xl mb-4"
-              animate={{ rotate: [0, 15, -15, 0] }}
-              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-            >
-              {service.icon}
-            </motion.div>
-            <h2 className="text-2xl font-semibold mb-2">{service.title}</h2>
-            <p className="text-gray-300">{service.description}</p>
+            <div
+              className="w-10 h-[3px] bg-orange-400/80 mb-6 rounded-full
+  group-hover:w-16 transition-all duration-300"
+            />
+
+            <h3 className="text-xl font-semibold mb-3 text-gray-900">
+              {service.title}
+            </h3>
+
+            <p className="text-gray-600 leading-relaxed">
+              {service.description}
+            </p>
           </motion.div>
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 }
