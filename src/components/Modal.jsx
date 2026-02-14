@@ -53,7 +53,7 @@ export default function Modal() {
             exit={{ y: 100, opacity: 0 }}
             transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
             className="
-              fixed z-50
+              fixed z-50 flex gap-6 justify-center
               bottom-0 left-1/2 -translate-x-1/2
               md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2
               bg-[#FAFAF9] text-[#0F172A]

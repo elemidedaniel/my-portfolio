@@ -90,7 +90,7 @@ export default function SkillsSection() {
       
       {/* Header */}
       <div className="max-w-4xl mx-auto mb-8 text-center">
-        <h2 className="text-gray-800 text-3xl font-semibold">
+        <h2 className="text-orange-500 text-3xl font-semibold">
           Skills
         </h2>
       </div>

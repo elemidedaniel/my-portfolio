@@ -37,7 +37,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="py-28 px-6 lg:px-20 bg-gradient-to-b from-orange-50/40 to-white"
+      className="py-18 px-6 lg:px-20"
     >
       {/* Header */}
       <div className="max-w-3xl">
@@ -45,11 +45,11 @@ export default function Services() {
           SERVICES
         </p>
 
-        <h2 className="font-grat text-[clamp(2.2rem,4vw,3.5rem)] leading-tight">
+        <h2 className="font-grat text-[clamp(2.2rem,4vw,3.5rem)] leading-tight text-orange-500">
           What I Help Clients Build
         </h2>
 
-        <p className="mt-6 text-gray-600 text-lg max-w-2xl">
+        <p className="mt-6 text-white text-lg max-w-2xl">
           I design and develop digital products that are fast, elegant, and
           built with attention to detail from concept to deployment.
         </p>

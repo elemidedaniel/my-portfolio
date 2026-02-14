@@ -26,7 +26,7 @@ const reviews = [
 
 export default function Reviews() {
   return (
-    <section className="py-4 px-6 md:px-20 bg-gradient-to-b from-slate-50 to-white">
+    <section className="py-15 px-6 md:px-20 bg-gradient-to-b from-slate-50 to-white">
       
       {/* Header */}
       <motion.div
