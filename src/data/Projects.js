@@ -23,9 +23,47 @@ import prod18 from "../assets/projects/prod18.png";
 import prod19 from "../assets/projects/prod19.png";
 import prod20 from "../assets/projects/prod20.png";
 
+import signallense1 from "../assets/projects/signallens1.jpeg"
+import signallense2 from "../assets/projects/signallens2.jpeg"
+import signallense3 from "../assets/projects/signallens3.jpeg"
+import signallense4 from "../assets/projects/signallens4.jpeg"
+import signallense5 from "../assets/projects/signallens5.jpeg"
+import signallense6 from "../assets/projects/signallens6.png"
+
 
 
 export const projects = [
+
+{
+  id: "signallens",
+  title: "Cryptocurrency Intelligence Platform",
+  cover: signallense4,
+  images: [signallense1, signallense2, signallense3, signallense4, signallense5, signallense6],
+  stack: [
+    "React (Vite)",
+    "Tailwind CSS",
+    "Node.js",
+    "Express",
+    "MongoDB Atlas",
+    "JWT",
+    "Anthropic API",
+    "CoinGecko API"
+  ],
+  description:
+    "A production-ready cryptocurrency intelligence platform that provides real-time market data, AI-powered analysis, automated price alerts, portfolio tracking, and sentiment insights in one unified dashboard.",
+  whatIDid:
+    "Architected and built the full-stack system from scratch, including JWT authentication, REST API design, smart API caching with fallback logic, background price-check scheduler, AI market analysis integration, portfolio P&L engine, and fully responsive UI with optimized state management.",
+  challenges: [
+    "Handling CoinGecko API rate limits with smart caching and stale fallback strategy",
+    "Designing a background job to monitor price alerts without external cron services",
+    "Securing authentication with JWT and protected routes across the SPA",
+    "Optimizing live portfolio calculations and minimizing unnecessary re-renders",
+    "Deploying and managing environment variables securely across Vercel and Render"
+  ],
+  github: "https://github.com/elemidedaniel/signallens",
+  live: "https://signallens-virid.vercel.app"
+},
+
   {
     id: "admin-dashboard",
     title: "Admin Dashboard",
