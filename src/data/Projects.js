@@ -30,6 +30,13 @@ import signallense4 from "../assets/projects/signallens4.jpeg"
 import signallense5 from "../assets/projects/signallens5.jpeg"
 import signallense6 from "../assets/projects/signallens6.png"
 
+import thex1 from "../assets/projects/thex1.png"
+import thex2 from "../assets/projects/thex2.png"
+import thex3 from "../assets/projects/thex3.png"
+import thex4 from "../assets/projects/thex4.png"
+import thex5 from "../assets/projects/thex5.png"
+
+
 
 
 export const projects = [
@@ -83,6 +90,36 @@ export const projects = [
     github: "https://github.com/yourrepo/admin-dashboard",
     live: "https://admindashboard-rose-ten.vercel.app/",
   },
+
+  {
+  id: "thex",
+  title: "Open Source React Component Library",
+  cover: thex1,
+  images: [thex1, thex2, thex3, thex4, thex5],
+  stack: [
+    "React (Vite)",
+    "TypeScript",
+    "Tailwind CSS v4",
+    "Framer Motion",
+    "Class Variance Authority",
+    "Radix UI",
+    "Storybook 10",
+    "Node.js"
+  ],
+  description:
+    "A production-grade React component library featuring 20 fully animated, accessible components built from scratch. Includes a complete design token system, WCAG 2.2 compliance, spring animations on every interaction, and live Storybook documentation with interactive playgrounds.",
+  whatIDid:
+    "Designed and engineered the entire library solo — from the design token system and variant architecture using CVA, to every component's animation logic with Framer Motion, TypeScript interfaces, accessibility implementation, and Storybook documentation. Built and deployed both the showcase site and the interactive docs site.",
+  challenges: [
+    "Architecting a scalable variant system using CVA that supports flat, glass, and neumorphic styles across all components",
+    "Implementing smooth height animations for Accordion and AnimatePresence transitions without layout shift",
+    "Building a smart Tooltip with dynamic positioning that adapts to viewport edges across all four placements",
+    "Resolving Storybook 10 and peer dependency conflicts across the monorepo build pipeline",
+    "Ensuring full WCAG 2.2 compliance with keyboard navigation, ARIA attributes, and focus management across all 20 components"
+  ],
+  github: "https://github.com/elemidedaniel/thex",
+  live: "https://thex-uw4j.vercel.app"
+},
 
   {
     id: "e-commerce-website",
