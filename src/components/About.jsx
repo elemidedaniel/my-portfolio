@@ -53,37 +53,24 @@ export default function About() {
 
       {isActive && (
         <>
-          {/* Main Dot */}
-          <motion.div
-            animate={{
-              x: mousePosition.x - 8,
-              y: mousePosition.y - 8,
-              scale: isHovering ? 1.8 : 1,
-            }}
-            transition={{ type: "spring", stiffness: 500, damping: 30 }}
-            className="fixed top-0 left-0 w-4 h-4 bg-orange-500 rounded-full z-50 pointer-events-none"
-          />
+{/* Dot */}
+<motion.div
+  animate={{ x: mousePosition.x - 4, y: mousePosition.y - 4 }}
+  transition={{ type: "spring", stiffness: 600, damping: 28 }}
+  className="fixed top-0 left-0 w-2 h-2 bg-orange-500 rounded-full z-50 pointer-events-none"
+/>
 
-          {/* Glow Ring */}
-          <motion.div
-            animate={{
-              x: mousePosition.x - 40,
-              y: mousePosition.y - 40,
-              scale: isHovering ? 1.4 : 1,
-            }}
-            transition={{ type: "spring", stiffness: 150, damping: 20 }}
-            className="fixed top-0 left-0 w-20 h-20 border border-orange-500 rounded-full z-40 pointer-events-none opacity-40"
-          />
-
-          {/* Soft Aura */}
-          <motion.div
-            animate={{
-              x: mousePosition.x - 100,
-              y: mousePosition.y - 100,
-            }}
-            transition={{ type: "spring", stiffness: 80, damping: 20 }}
-            className="fixed top-0 left-0 w-52 h-52 bg-orange-500 opacity-10 rounded-full pointer-events-none z-30"
-          />
+{/* Ring */}
+<motion.div
+  animate={{
+    x: mousePosition.x - 16,
+    y: mousePosition.y - 16,
+    scale: isHovering ? 1.5 : 1,
+    opacity: isHovering ? 0.6 : 0.3,
+  }}
+  transition={{ type: "spring", stiffness: 200, damping: 22 }}
+  className="fixed top-0 left-0 w-8 h-8 border border-orange-500 rounded-full z-40 pointer-events-none"
+/>
         </>
       )}
 
