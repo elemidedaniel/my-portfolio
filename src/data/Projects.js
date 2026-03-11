@@ -36,6 +36,13 @@ import thex3 from "../assets/projects/thex3.png"
 import thex4 from "../assets/projects/thex4.png"
 import thex5 from "../assets/projects/thex5.png"
 
+import lumi1 from "../assets/projects/lumi1.png"
+import lumi2 from "../assets/projects/lumi2.png"
+import lumi3 from "../assets/projects/lumi3.png"
+import lumi4 from "../assets/projects/lumi4.png"
+import lumi5 from "../assets/projects/lumi5.png"
+import lumi6 from "../assets/projects/lumi6.png"
+
 
 
 
@@ -92,6 +99,52 @@ export const projects = [
   },
 
   {
+    id: "e-commerce-website",
+    title: "E-Commerce Website",
+    cover: prod6,
+    images: [prod5, prod1, prod9, prod10],
+    stack: ["React", "Context API", "Stripe", "Tailwind"],
+    description:
+      "A modern e-commerce platform with product browsing, cart system, and checkout integration.",
+    whatIDid:
+      "Developed the product filtering logic, implemented cart state management, integrated payment gateway, and optimized mobile responsiveness.",
+    challenges: [
+      "Managing global cart state efficiently",
+      "Handling payment integration securely",
+      "Optimizing image-heavy product pages",
+      "Ensuring smooth checkout flow"
+    ],
+    github: "https://github.com/yourrepo/e-commerce-website",
+    live: "https://nextek-frontend-g1j4.vercel.app/",
+  },
+
+{
+  id: "lumi",
+  title: "Luxury Skincare Brand Landing Page",
+  cover: lumi1,
+  images: [lumi1, lumi2, lumi3, lumi4, lumi5, lumi6],
+  stack: [
+    "React (Vite)",
+    "Tailwind CSS",
+    "Framer Motion",
+    "React Router v6",
+  ],
+  description:
+    "A premium skincare brand website for Lumi — a fictional organic beauty label. Features a fully animated multi-page experience with editorial design, parallax scrolling, product showcases, ingredient deep-dives, a journal, and a conversion-focused landing page.",
+  whatIDid:
+    "Designed and built the entire frontend from scratch — brand identity, design system, and all UI components. Implemented scroll-linked parallax animations, page transitions, an interactive ritual step viewer, a filterable ingredients page, and a journal with category filtering and sidebar. Structured the app with nested React Router layouts and a shared Navbar/Footer.",
+  challenges: [
+    "Implementing scroll-linked parallax with Framer Motion's useScroll without position warnings across multiple page contexts",
+    "Building a bento-grid product section that adapts cleanly across breakpoints without a CSS framework grid system",
+    "Managing shared layout state (Navbar active links, scroll behavior) across four distinct routes",
+    "Achieving an editorial magazine aesthetic purely in JSX inline styles combined with Tailwind utility classes",
+    "Optimising large image assets for production build while maintaining visual quality across the site",
+  ],
+  github: "https://github.com/elemidedaniel/lumi-skincare",
+  live: "https://lumi-skincare-sevy.vercel.app/",
+},
+
+{
   id: "thex",
   title: "Open Source React Component Library",
   cover: thex1,
@@ -121,25 +174,6 @@ export const projects = [
   live: "https://thex-uw4j.vercel.app"
 },
 
-  {
-    id: "e-commerce-website",
-    title: "E-Commerce Website",
-    cover: prod6,
-    images: [prod5, prod1, prod9, prod10],
-    stack: ["React", "Context API", "Stripe", "Tailwind"],
-    description:
-      "A modern e-commerce platform with product browsing, cart system, and checkout integration.",
-    whatIDid:
-      "Developed the product filtering logic, implemented cart state management, integrated payment gateway, and optimized mobile responsiveness.",
-    challenges: [
-      "Managing global cart state efficiently",
-      "Handling payment integration securely",
-      "Optimizing image-heavy product pages",
-      "Ensuring smooth checkout flow"
-    ],
-    github: "https://github.com/yourrepo/e-commerce-website",
-    live: "https://nextek-frontend-g1j4.vercel.app/",
-  },
   {
   id: "home-care-landing",
   title: "Home Care Services Website",
@@ -195,25 +229,6 @@ export const projects = [
     ],
     github: "https://github.com/yourrepo/appointment-booking",
     live: "https://expense-tracker-fawn-one.vercel.app/",
-  },
-
-  {
-    id: "3D-implementation-landing-page",
-    title: "3D Implementation Landing Page",
-    cover: prod12,
-    images: [prod12, project18],
-    stack: ["React", "Three.js", "Framer Motion"],
-    description:
-      "A visually immersive landing page integrating interactive 3D elements with smooth animations.",
-    whatIDid:
-      "Integrated Three.js scenes, optimized render performance, created scroll-triggered animation flow, and structured immersive storytelling sections.",
-    challenges: [
-      "Optimizing WebGL performance",
-      "Balancing animation smoothness with load speed",
-      "Maintaining responsiveness across devices"
-    ],
-    github: "https://github.com/yourrepo/3d-landing",
-    live: "https://admindashboard-rose-ten.vercel.app/",
   },
 
   {
