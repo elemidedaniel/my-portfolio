@@ -189,8 +189,8 @@ export const projects = [
     "Structuring sections to guide users naturally toward contacting the business",
     "Balancing animations and performance for a smooth experience"
   ],
-  github: "",
-  live: "https://your-live-site-link.com",
+  github: "https://github.com/elemidedaniel/care-bridge",
+  live: "https://care-bridge-hazel.vercel.app`",
 },
 
   {
