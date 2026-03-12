@@ -190,7 +190,7 @@ export const projects = [
     "Balancing animations and performance for a smooth experience"
   ],
   github: "https://github.com/elemidedaniel/care-bridge",
-  live: "https://care-bridge-hazel.vercel.app`",
+  live: "https://care-bridge-hazel.vercel.app",
 },
 
   {
