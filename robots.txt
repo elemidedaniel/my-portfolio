@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Allow: /projects
+
+Disallow: /projects/*/
+
+Sitemap: https://daniel-elemide.vercel.app/sitemap.xml
